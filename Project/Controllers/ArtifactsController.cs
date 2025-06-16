@@ -8,11 +8,11 @@ namespace Project.Controllers;
 [Route("api")]
 public class ArtifactsController : ControllerBase
 {
-    private readonly DbService _dbService;
+    private readonly IDbService _dbService;
 
-    public ArtifactsController(DbService db)
+    public ArtifactsController(IDbService dbService)
     {
-        _dbService = db;
+        _dbService = dbService;
     }
     
     [HttpGet("projects/{id}")]
